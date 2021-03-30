@@ -9,7 +9,15 @@ class EmergencyPage extends StatelessWidget {
     return Scaffold(
       // backgroundColor: Colors.red,
       body: Center(
-        child: BotonGordo(),
+        child: BotonGordo(
+          onPress: () {
+            print("Press");
+          },
+          icon: FontAwesomeIcons.carCrash,
+          color1: Colors.red,
+          color2: Colors.yellowAccent,
+          texto: "Motor Accident",
+        ),
       ),
     );
   }
