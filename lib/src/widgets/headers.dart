@@ -173,11 +173,11 @@ class _HeaderCurvoPainter extends CustomPainter {
     final path = new Path();
 
     //Dibujar con el path y el lapiz
-    path.lineTo(0, size.height * 0.30); 
-    path.quadraticBezierTo(size.width*0.5, size.height*0.4, size.width, size.height*0.30);
+    path.lineTo(0, size.height * 0.30);
+    path.quadraticBezierTo(
+        size.width * 0.5, size.height * 0.4, size.width, size.height * 0.30);
     path.lineTo(size.width, 0);
     // path.lineTo(size.width, size.height*0.25);
-
 
     canvas.drawPath(path, lapiz);
   }
@@ -187,7 +187,6 @@ class _HeaderCurvoPainter extends CustomPainter {
     return true;
   }
 }
-
 
 class HeaderWave extends StatelessWidget {
   @override
@@ -215,12 +214,13 @@ class _HeaderWavePainter extends CustomPainter {
     final path = new Path();
 
     //Dibujar con el path y el lapiz
-    path.lineTo(0, size.height * 0.30); 
-    path.quadraticBezierTo(size.width*0.25, size.height*0.35, size.width*0.5, size.height*0.30);
-    path.quadraticBezierTo(size.width*0.75, size.height*0.25, size.width, size.height*0.30);
+    path.lineTo(0, size.height * 0.30);
+    path.quadraticBezierTo(size.width * 0.25, size.height * 0.35,
+        size.width * 0.5, size.height * 0.30);
+    path.quadraticBezierTo(
+        size.width * 0.75, size.height * 0.25, size.width, size.height * 0.30);
     path.lineTo(size.width, 0);
     // path.lineTo(size.width, size.height*0.25);
-
 
     canvas.drawPath(path, lapiz);
   }
@@ -230,7 +230,6 @@ class _HeaderWavePainter extends CustomPainter {
     return true;
   }
 }
-
 
 class HeaderWaveBottom extends StatelessWidget {
   @override
@@ -258,14 +257,16 @@ class _HeaderWaveBottomPainter extends CustomPainter {
     final path = new Path();
 
     //Dibujar con el path y el lapiz
-    // path.lineTo(0, size.height * 0.30); 
+    // path.lineTo(0, size.height * 0.30);
     // path.quadraticBezierTo(size.width*0.25, size.height*0.35, size.width*0.5, size.height*0.30);
     // path.quadraticBezierTo(size.width*0.75, size.height*0.25, size.width, size.height*0.30);
     // path.lineTo(size.width, 0);
- 
-    path.moveTo(0, size.height * 0.80); 
-    path.quadraticBezierTo(size.width*0.25, size.height*0.75, size.width*0.5, size.height*0.80);
-    path.quadraticBezierTo(size.width*0.75, size.height*0.85, size.width, size.height*0.80);
+
+    path.moveTo(0, size.height * 0.80);
+    path.quadraticBezierTo(size.width * 0.25, size.height * 0.75,
+        size.width * 0.5, size.height * 0.80);
+    path.quadraticBezierTo(
+        size.width * 0.75, size.height * 0.85, size.width, size.height * 0.80);
     path.lineTo(size.width, size.height);
     path.lineTo(0, size.height);
 
@@ -277,7 +278,6 @@ class _HeaderWaveBottomPainter extends CustomPainter {
     return true;
   }
 }
-
 
 class HeaderWaveGradient extends StatelessWidget {
   @override
@@ -295,26 +295,23 @@ class HeaderWaveGradient extends StatelessWidget {
 class _HeaderWaveGradientPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    final Rect rect = new Rect.fromCircle(
-      center: Offset(0.0,55.0), 
-      radius: 180
-    );
+    final Rect rect =
+        new Rect.fromCircle(center: Offset(0.0, 55.0), radius: 180);
 
     final Gradient gradiente = new LinearGradient(
-      begin  : Alignment.topCenter,
-      end    : Alignment.bottomCenter,
-      colors : <Color>[
-        Color(0xff6D05E8),
-        Color(0xffC012FF),
-        Color(0xff6D05FA) 
-      ],
-      stops: [
-        0.2,
-        0.5,
-        1.0
-      ]
-    );
-    final lapiz = Paint()..shader =gradiente.createShader(rect);
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        colors: <Color>[
+          Color(0xff6D05E8),
+          Color(0xffC012FF),
+          Color(0xff6D05FA)
+        ],
+        stops: [
+          0.2,
+          0.5,
+          1.0
+        ]);
+    final lapiz = Paint()..shader = gradiente.createShader(rect);
 
     // Propiedades
     // lapiz.color = Colors.red;
@@ -324,12 +321,13 @@ class _HeaderWaveGradientPainter extends CustomPainter {
     final path = new Path();
 
     //Dibujar con el path y el lapiz
-    path.lineTo(0, size.height * 0.30); 
-    path.quadraticBezierTo(size.width*0.25, size.height*0.35, size.width*0.5, size.height*0.30);
-    path.quadraticBezierTo(size.width*0.75, size.height*0.25, size.width, size.height*0.30);
+    path.lineTo(0, size.height * 0.30);
+    path.quadraticBezierTo(size.width * 0.25, size.height * 0.35,
+        size.width * 0.5, size.height * 0.30);
+    path.quadraticBezierTo(
+        size.width * 0.75, size.height * 0.25, size.width, size.height * 0.30);
     path.lineTo(size.width, 0);
     // path.lineTo(size.width, size.height*0.25);
-
 
     canvas.drawPath(path, lapiz);
   }
@@ -337,5 +335,29 @@ class _HeaderWaveGradientPainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
     return true;
+  }
+}
+
+class IconHeader extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: 300.0,
+      decoration: BoxDecoration(
+        color: Colors.red,
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(80),
+        ),
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color(0xff526bf6),
+            Color(0xff67acf2),
+          ],
+        ),
+      ),
+    );
   }
 }

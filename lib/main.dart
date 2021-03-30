@@ -1,5 +1,6 @@
 import 'package:emergency_layout/src/pages/animaciones_page.dart';
 import 'package:emergency_layout/src/labs/circular_progressbar_page.dart';
+import 'package:emergency_layout/src/pages/emergency_page.dart';
 import 'package:emergency_layout/src/pages/graficas_circulares_page.dart';
 import 'package:emergency_layout/src/pages/headers_page.dart';
 import 'package:emergency_layout/src/labs/slideshow_page.dart';
@@ -17,6 +18,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Diseños App',
-        home: PinterestPage());
+        home: EmergencyPage());
   }
 }
