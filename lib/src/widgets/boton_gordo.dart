@@ -23,6 +23,7 @@ class BotonGordo extends StatelessWidget {
       child: Stack(
         children: [
           _BotonGordoBackground(
+            icon: this.icon,
             color1: this.color1,
             color2: this.color2,
           ),
@@ -63,10 +64,12 @@ class BotonGordo extends StatelessWidget {
 }
 
 class _BotonGordoBackground extends StatelessWidget {
+  final IconData icon;
   final Color color1;
   final Color color2;
 
   const _BotonGordoBackground({
+    @required this.icon,
     @required this.color1,
     @required this.color2,
   });
@@ -80,7 +83,7 @@ class _BotonGordoBackground extends StatelessWidget {
             Positioned(
               right: -20,
               top: -20,
-              child: FaIcon(FontAwesomeIcons.carCrash,
+              child: FaIcon(this.icon,
                   size: 150, color: Colors.white.withOpacity(0.2)),
             ),
           ],
