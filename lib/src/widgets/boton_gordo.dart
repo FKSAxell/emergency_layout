@@ -9,10 +9,10 @@ class BotonGordo extends StatelessWidget {
   final Function onPress;
 
   const BotonGordo({
-    this.icon,
-    this.texto,
-    this.color1,
-    this.color2,
+    this.icon = FontAwesomeIcons.carCrash,
+     @required this.texto,
+    this.color1 = Colors.blue,
+    this.color2 = Colors.purple,
     @required this.onPress,
   });
 
