@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:emergency_layout/src/widgets/boton_gordo.dart';
 import 'package:emergency_layout/src/widgets/headers.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +44,10 @@ class EmergencyPage extends StatelessWidget {
     ];
 
     List<Widget> itemMap = items
-        .map((item) => BotonGordo(
+        .map(
+          (item) => FadeInLeft(
+            duration: Duration(milliseconds: 300),
+            child: BotonGordo(
               icon: item.icon,
               texto: item.texto,
               color1: item.color1,
@@ -51,7 +55,9 @@ class EmergencyPage extends StatelessWidget {
               onPress: () {
                 print(item.texto);
               },
-            ))
+            ),
+          ),
+        )
         .toList();
 
     return Scaffold(
@@ -61,6 +67,7 @@ class EmergencyPage extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(top: 200),
             child: ListView(
+              physics: BouncingScrollPhysics(),
               children: [
                 SizedBox(
                   height: 80,
@@ -69,15 +76,42 @@ class EmergencyPage extends StatelessWidget {
               ],
             ),
           ),
-          IconHeader(
-            icon: FontAwesomeIcons.plus,
-            subTitulo: 'Haz Solicitado',
-            titulo: 'Asistencia Médica',
-            color1: Color(0xff526BF6),
-            color2: Color(0xff67ACF2),
-          ),
+          _Encabezado(),
         ],
       ),
+    );
+  }
+}
+
+class _Encabezado extends StatelessWidget {
+  const _Encabezado({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        IconHeader(
+          icon: FontAwesomeIcons.plus,
+          subTitulo: 'Haz Solicitado',
+          titulo: 'Asistencia Médica',
+          color1: Color(0xff526BF6),
+          color2: Color(0xff67ACF2),
+        ),
+        Positioned(
+          right: 0,
+          // top: 0,
+          child: SafeArea(
+            child: RawMaterialButton(
+              shape: CircleBorder(),
+              padding: EdgeInsets.all(15),
+              onPressed: () {},
+              child: FaIcon(FontAwesomeIcons.ellipsisV, color: Colors.white),
+            ),
+          ),
+        )
+      ],
     );
   }
 }
